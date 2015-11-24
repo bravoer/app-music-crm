@@ -12,18 +12,6 @@ defmodule Dispatcher do
   plug :match
   plug :dispatch
 
-  get "/hello" do
-    send_resp( conn, 200, "world" )
-  end
-
-  get "/world" do
-    send_resp( conn, 200, "42" )
-  end
-
-  get "/" do
-    send_resp( conn, 200, "This is plug" )
-  end
-
   match "/accounts/*path" do
     Proxy.forward conn, path, "http://registration/accounts/"
   end
@@ -32,9 +20,12 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://login/sessions/"
   end
 
-  match "/comments/*path" do
-    IO.puts "Matching /comments/*path"
-    Proxy.forward conn, path, "http://comments/"
+	match "/scores/*path" do
+    Proxy.forward conn, path, "http://resource/scores/"
+  end
+
+  match "/parts/*path" do
+    Proxy.forward conn, path, "http://resource/parts/"
   end
 
   match "/files/*path" do

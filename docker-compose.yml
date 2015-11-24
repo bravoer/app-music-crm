@@ -9,16 +9,18 @@ dispatcher:
   links:
     - registration:registration
     - login:login
-    - comments:comments
     - file:file
+    - resource:resource
   volumes:
-    - config:/config
+    - ./config:/config
 db:
   image: tenforce/virtuoso:virtuoso-v7.2.0-latest
   environment:
     SPARQL_UPDATE: "true"
   ports:
     - "8890:8890"
+  volumes:
+    - /home/erika/mu-semtech/docker-data/virtuoso:/var/lib/virtuoso/db
 registration:
   image: semtech/mu-registration-service
   links:
@@ -33,10 +35,6 @@ login:
   environment:
     MU_APPLICATION_GRAPH: http://mu.semte.ch/application
     MU_APPLICATION_SALT: mysupersecretsaltchangeme
-comments:
-  image: semtech/mu-page-comments-service
-  links:
-    - db:database
 file:
   image: semtech/mu-file-service
   links: 
@@ -46,3 +44,11 @@ file:
   environment:
     MU_APPLICATION_GRAPH: http://mu.semte.ch/application
     SECRET_KEY_BASE: my-secret-production-key-for-rails
+resource:
+  image: semtech/mu-cl-resources
+  links:
+    - db:database
+  volumes:
+    - ./config/resources:/config
+  environment:
+    BOOT: mu-cl-resources
