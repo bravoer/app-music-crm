@@ -1,9 +1,15 @@
+frontend:
+  image: semtech/mu-nginx-spa-proxy
+  volumes:
+    - ./dist:/app
+  links:
+    - identifier:backend
+  ports:
+    - "80:80"
 identifier:
   image: semtech/mu-identifier
   links:
     - dispatcher:dispatcher
-  ports:
-    - "80:80"
 dispatcher:
   image: semtech/mu-dispatcher
   links:
