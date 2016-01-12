@@ -1,11 +1,15 @@
 frontend:
   image: semtech/mu-nginx-spa-proxy
   volumes:
-    - ./dist:/app
+    - ./client/dist:/app
   links:
     - identifier:backend
   ports:
     - "80:80"
+  environment:
+    VIRTUAL_HOST: "bravoer.semte.ch,backstage.bravoer.be"
+    LETSENCRYPT_HOST: "bravoer.semte.ch,backstage.bravoer.be"
+    LETSENCRYPT_EMAIL: "erika.pauwels@gmail.com"
 identifier:
   image: semtech/mu-identifier
   links:
@@ -26,7 +30,7 @@ db:
   ports:
     - "8890:8890"
   volumes:
-    - /home/erika/mu-semtech/docker-data/virtuoso:/var/lib/virtuoso/db
+    - ./virtuoso:/var/lib/virtuoso/db
 registration:
   image: semtech/mu-registration-service
   links:
@@ -46,7 +50,7 @@ file:
   links: 
     - db:database
   volumes:
-    - /tmp/storage:/home/app/storage
+    - ./storage:/home/app/storage
   environment:
     MU_APPLICATION_GRAPH: http://mu.semte.ch/application
     SECRET_KEY_BASE: my-secret-production-key-for-rails
