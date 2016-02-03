@@ -11,11 +11,11 @@ frontend:
     LETSENCRYPT_HOST: "bravoer.semte.ch,backstage.bravoer.be"
     LETSENCRYPT_EMAIL: "erika.pauwels@gmail.com"
 identifier:
-  image: semtech/mu-identifier
+  image: semtech/mu-identifier:1.0.0
   links:
     - dispatcher:dispatcher
 dispatcher:
-  image: semtech/mu-dispatcher
+  image: semtech/mu-dispatcher:1.0.0
   links:
     - registration:registration
     - login:login
@@ -32,21 +32,21 @@ db:
   volumes:
     - ./virtuoso:/var/lib/virtuoso/db
 registration:
-  image: semtech/mu-registration-service
+  image: semtech/mu-registration-service:2.0.1
   links:
     - db:database
   environment:
     MU_APPLICATION_GRAPH: http://mu.semte.ch/application
     MU_APPLICATION_SALT: mysupersecretsaltchangeme
 login:
-  image: semtech/mu-login-service
+  image: semtech/mu-login-service:2.0.1
   links:
     - db:database
   environment:
     MU_APPLICATION_GRAPH: http://mu.semte.ch/application
     MU_APPLICATION_SALT: mysupersecretsaltchangeme
 file:
-  image: semtech/mu-file-service
+  image: semtech/mu-file-service:2.0.0
   links: 
     - db:database
   volumes:
@@ -55,7 +55,7 @@ file:
     MU_APPLICATION_GRAPH: http://mu.semte.ch/application
     SECRET_KEY_BASE: my-secret-production-key-for-rails
 resource:
-  image: semtech/mu-cl-resources
+  image: semtech/mu-cl-resources:1.0.2
   links:
     - db:database
   volumes:
