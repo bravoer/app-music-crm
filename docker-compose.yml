@@ -1,5 +1,5 @@
 frontend:
-  image: semtech/mu-nginx-spa-proxy:1.0.0
+  image: semtech/mu-nginx-spa-proxy:1.0.1
   volumes:
     - ./client/dist:/app
   links:
