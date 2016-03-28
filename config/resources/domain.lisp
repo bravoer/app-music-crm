@@ -20,7 +20,7 @@
 
 (define-resource part()
   :class (s-prefix "music:Part")
-  :properties `((:instrument :url ,(s-prefix "music:instrument"))
+  :properties `((:instrument :string ,(s-prefix "music:instrument"))
                 (:instrument-part :string ,(s-prefix "music:instrumentPart"))
                 (:key :string ,(s-prefix "music:key"))
                 (:clef :string ,(s-prefix "music:clef"))
