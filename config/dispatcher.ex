@@ -28,6 +28,26 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/parts/"
   end
 
+	match "/musicians/*path" do
+    Proxy.forward conn, path, "http://resource/musicians/"
+  end
+
+  match "/sympathizers/*path" do
+    Proxy.forward conn, path, "http://resource/sympathizers/"
+  end
+
+  match "/addresses/*path" do
+    Proxy.forward conn, path, "http://resource/addresses/"
+  end
+
+  match "/telephones/*path" do
+    Proxy.forward conn, path, "http://resource/telephones/"
+  end
+
+  match "/users/*path" do
+    Proxy.forward conn, path, "http://resource/users/"
+  end
+
   match "/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end
