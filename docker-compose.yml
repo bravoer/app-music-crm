@@ -62,7 +62,7 @@ file:
   environment:
     SECRET_KEY_BASE: my-secret-production-key-for-rails
 resource:
-  image: semtech/mu-cl-resources:1.8.1
+  image: semtech/mu-cl-resources:1.10.2
   links:
     - db:database
   volumes:
