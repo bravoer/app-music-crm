@@ -44,11 +44,27 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/telephones/"
   end
 
+  match "/authenticatables/*path" do
+    Proxy.forward conn, path, "http://resource/authenticatables/"
+  end
+
   match "/users/*path" do
     Proxy.forward conn, path, "http://resource/users/"
   end
 
-  match "/files/*path" do
+  match "/user-groups/*path" do
+    Proxy.forward conn, path, "http://resource/user-groups/"
+  end
+
+  match "/access-tokens/*path" do
+    Proxy.forward conn, path, "http://resource/access-tokens/"
+  end
+
+  match "/grants/*path" do
+    Proxy.forward conn, path, "http://resource/grants/"
+  end
+
+	match "/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end
 
