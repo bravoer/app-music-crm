@@ -20,6 +20,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://login/sessions/"
   end
 
+  match "/userprofile/*path" do
+    Proxy.forward conn, path, "http://userprofile/userprofile/"
+  end
+
 	match "/scores/*path" do
     Proxy.forward conn, path, "http://resource/scores/"
   end

@@ -22,6 +22,7 @@ dispatcher:
     - login:login
     - file:file
     - resource:resource
+    - userprofile:userprofile
   volumes:
     - ./config:/config
 db:
@@ -44,6 +45,14 @@ login:
     - db:database
   environment:
     MU_APPLICATION_SALT: mysupersecretsaltchangeme
+userprofile:
+  image: semtech/mu-sinatra-template:1.3.1-ruby2.1
+  links:
+    - db:database
+  environment:
+    RACK_ENV: development
+  volumes:
+    - /home/erika/mu-semtech/brav-user-profile-service:/app
 file:
   image: semtech/mu-file-service:2.1.0
   links: 

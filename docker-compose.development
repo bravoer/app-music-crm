@@ -9,7 +9,7 @@ dispatcher:
   links:
     - registration:registration
     - login:login
-#    - authorization:authorization
+    - userprofile:userprofile
     - file:file
     - resource:resource
   volumes:
@@ -40,16 +40,14 @@ login:
     RACK_ENV: development
   volumes:
     - /home/erika/mu-semtech/login-service:/usr/src/app/ext
-# authorization:
-#    image: tmp/mu-authorization
-# #   image: semtech/mu-authorization-service
-#    links:
-#      - db:database
-#    environment:
-#      MU_APPLICATION_GRAPH: http://mu.semte.ch/application
-#      RACK_ENV: development
-#    volumes:
-#      - /home/erika/mu-semtech/authorization-service/web.rb:/app/web.rb
+userprofile:
+  image: semtech/mu-sinatra-template:1.3.1-ruby2.1
+  links:
+    - db:database
+  environment:
+    RACK_ENV: development
+  volumes:
+    - /home/erika/mu-semtech/brav-user-profile-service:/app
 file:
   image: semtech/mu-file-service:2.1.0
   links: 
