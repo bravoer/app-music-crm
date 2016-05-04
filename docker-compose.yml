@@ -1,20 +1,22 @@
-# frontend:
-#   image: semtech/mu-nginx-spa-proxy:1.0.1
-#   volumes:
-#     - ./client/dist:/app
-#   links:
-#     - identifier:backend
-#   ports:
-#     - "80:80"
-#   environment:
-#     VIRTUAL_HOST: "bravoer.semte.ch,backstage.bravoer.be"
-#     LETSENCRYPT_HOST: "bravoer.semte.ch,backstage.bravoer.be"
-#     LETSENCRYPT_EMAIL: "erika.pauwels@gmail.com"
-#     STATIC_FOLDERS_REGEX: "^/(assets|font|files)/"
+frontend:
+  image: semtech/mu-nginx-spa-proxy:1.0.1
+  volumes:
+    - ./client/dist:/app
+  links:
+    - identifier:backend
+  ports:
+    - "80:80"
+  environment:
+    VIRTUAL_HOST: "bravoer.semte.ch,backstage.bravoer.be"
+    LETSENCRYPT_HOST: "bravoer.semte.ch,backstage.bravoer.be"
+    LETSENCRYPT_EMAIL: "erika.pauwels@gmail.com"
+    STATIC_FOLDERS_REGEX: "^/(assets|font|files)/"
 identifier:
   image: semtech/mu-identifier:1.0.0
   links:
     - dispatcher:dispatcher
+  # ports:
+  #   - "80:80"
 dispatcher:
   image: semtech/mu-dispatcher:1.0.1
   links:
@@ -63,5 +65,3 @@ resource:
     - db:database
   volumes:
     - ./config/resources:/config
-  environment:
-    BOOT: mu-cl-resources
