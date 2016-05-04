@@ -14,7 +14,7 @@
                 (:status :string ,(s-prefix "bravoer:status"))
 		(:created :date ,(s-prefix "dcterms:created"))
 		(:modified :date ,(s-prefix "dcterms:modified")))
-  :resource-base (s-url "http://backstage.bravoer.be/api/scores/")
+  :resource-base (s-url "http://data.bravoer.be/id/scores/")
   :has-many `((part :via ,(s-prefix "nie:isLogicalPartOf")
 			   :inverse t
 			   :as "parts"))
@@ -34,7 +34,7 @@
 		(:name :string ,(s-prefix "nie:title"))
 		(:created :date ,(s-prefix "dcterms:created"))
 		(:modified :date ,(s-prefix "dcterms:modified")))
-  :resource-base (s-url "http://backstage.bravoer.be/api/parts/")
+  :resource-base (s-url "http://data.bravoer.be/id/parts/")
   :has-one `((score :via ,(s-prefix "nie:isLogicalPartOf")
                             :as "score"))
   :authorization (list :show (s-prefix "auth:show")
@@ -53,7 +53,7 @@
 		(:birthdate :date ,(s-prefix "vcard:bday"))
 		(:created :date ,(s-prefix "dcterms:created"))
 		(:modified :date ,(s-prefix "dcterms:modified")))
-  :resource-base (s-url "http://backstage.bravoer.be/api/contacts/")
+  :resource-base (s-url "http://data.bravoer.be/id/contacts/")
   :has-one `((address :via ,(s-prefix "locn:address")
 		      :as "address")
 	     (user :via ,(s-prefix "bravoer:hasUser")
@@ -75,7 +75,7 @@
 		(:birthdate :date ,(s-prefix "vcard:bday"))
 		(:created :date ,(s-prefix "dcterms:created"))
 		(:modified :date ,(s-prefix "dcterms:modified")))
-  :resource-base (s-url "http://backstage.bravoer.be/api/contacts/")
+  :resource-base (s-url "http://data.bravoer.be/id/contacts/")
   :has-one `((address :via ,(s-prefix "locn:address")
 		      :as "address"))
   :has-many `((telephone :via ,(s-prefix "vcard:hasTelephone")
@@ -94,21 +94,21 @@
 		(:city :string ,(s-prefix "locn:postName"))
 		(:created :date ,(s-prefix "dcterms:created"))
 		(:modified :date ,(s-prefix "dcterms:modified")))
-  :resource-base (s-url "http://backstage.bravoer.be/api/addresses/")
   :authorization (list :show (s-prefix "auth:show")
                        :update (s-prefix "auth:update")
                        :create (s-prefix "auth:create")
                        :delete (s-prefix "auth:delete"))
+  :resource-base (s-url "http://data.bravoer.be/id/addresses/")
   :on-path "addresses")
 
 (define-resource telephone ()
   :class (s-prefix "vcard:Voice")
   :properties `((:value :url,(s-prefix "rdf:value")))
-  :resource-base (s-url "http://backstage.bravoer.be/api/telephones/")
   :authorization (list :show (s-prefix "auth:show")
                        :update (s-prefix "auth:update")
                        :create (s-prefix "auth:create")
                        :delete (s-prefix "auth:delete"))
+  :resource-base (s-url "http://data.bravoer.be/id/telephones/")
   :on-path "telephones")
 
 
@@ -119,7 +119,7 @@
 ;;        has access-tokens which give it rights to resources
 (define-resource user ()
   :class (s-prefix "foaf:Person")
-  :resource-base (s-url "http://mu.semte.ch/application/users/")
+  :resource-base (s-url "http://mu.semte.ch/services/authorization-service/users/")
   :properties `((:name :string ,(s-prefix "foaf:name")))
   :has-many `((grant :via ,(s-prefix "auth:hasRight")
 			       :as "grants")
@@ -131,9 +131,9 @@
 ;; a user-group can contain other user-groups
 ;;              can contain users
 ;;              has authorization types on objects
-(define-resource userGroup ()
+(define-resource user-group ()
   :class (s-prefix "foaf:Group")
-  :resource-base (s-url "http://mu.semte.ch/application/groups/")
+  :resource-base (s-url "http://mu.semte.ch/services/authorization-service/groups/")
   :properties `((:name :string ,(s-prefix "foaf:name")))
   :has-many `((user :via ,(s-prefix "auth:belongsToActorGroup")
 		    :inverse t
@@ -153,7 +153,7 @@
 
 (define-resource authenticatable ()
   :class (s-prefix "auth:authenticatable")
-  :resource-base (s-url "http://mu.semte.ch/application/authenticatables/")
+  :resource-base (s-url "http://mu.semte.ch/services/authorization-service/authenticatables/")
   :properties `((:title :string, (s-prefix "dcterms:title")))
   :on-path "authenticatables")
 
@@ -162,9 +162,9 @@
 ;; we assume there to be 4 basic access token types that should
 ;; be present to make mu-cl-resources handle the access token stuff
 ;; correctly (show, update, create, delete)
-(define-resource accessToken ()
+(define-resource access-token ()
   :class (s-prefix "auth:accessToken")
-  :resource-base (s-url "http://mu.semte.ch/application/accessTokens/")
+  :resource-base (s-url "http://mu.semte.ch/services/authorization-service/accessTokens/")
   :properties `((:title :string ,(s-prefix "dcterms:title"))
 		(:description :string ,(s-prefix "dcterms:description"))
 		)
@@ -178,9 +178,9 @@
 ;; to exactly 1 authenticatable
 (define-resource grant ()
   :class (s-prefix "auth:grant")
-  :resource-base (s-url "http://mu.semte.ch/application/grants/")
+  :resource-base (s-url "http://mu.semte.ch/services/authorization-service/grants/")
   :has-many `((access-token :via, (s-prefix "auth:hasToken")
-			    :as "accessTokens")
+			    :as "access-tokens")
 	      (authenticatable :via, (s-prefix "auth:operatesOn")
 				:as "authenticatables"))
   :on-path "grants")
