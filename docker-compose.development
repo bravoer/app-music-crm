@@ -49,13 +49,14 @@ userprofile:
   volumes:
     - /home/erika/mu-semtech/brav-user-profile-service:/app
 file:
-  image: semtech/mu-file-service:2.1.0
+  image: semtech/mu-file-service:2.2.1
   links: 
     - db:database
   volumes:
-    - ./storage:/home/app/storage
+    - ./storage:/data
   environment:
     SECRET_KEY_BASE: my-secret-production-key-for-rails
+    MU_APPLICATION_MAX_FILE_SIZE: 50M
 resource:
   image: semtech/mu-cl-resources:1.10.2
   links:
