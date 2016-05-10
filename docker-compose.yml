@@ -1,7 +1,8 @@
 frontend:
-  image: semtech/mu-nginx-spa-proxy:1.0.1
+  image: semtech/ember-proxy-service:1.1.0
   volumes:
     - ./client/dist:/app
+    - ./config/spa-proxy:/config
   links:
     - identifier:backend
   ports:
