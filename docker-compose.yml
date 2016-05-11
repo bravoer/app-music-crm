@@ -53,7 +53,7 @@ userprofile:
   links:
     - db:database
 file:
-  image: semtech/mu-file-service:2.2.1
+  image: semtech/mu-file-service:2.3.0
   links: 
     - db:database
   volumes:
