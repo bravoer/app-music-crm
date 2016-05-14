@@ -49,7 +49,7 @@ login:
   environment:
     MU_APPLICATION_SALT: mysupersecretsaltchangeme
 userprofile:
-  image: erikap/brav-user-profile-service:0.1.0
+  image: bravoer/user-profile-service:0.1.0
   links:
     - db:database
 file:

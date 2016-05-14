@@ -47,7 +47,7 @@ userprofile:
   environment:
     RACK_ENV: development
   volumes:
-    - /home/erika/mu-semtech/brav-user-profile-service:/app
+    - /home/erika/bravoer/user-profile-service:/app
 file:
   image: semtech/mu-file-service:2.3.0
   links: 
