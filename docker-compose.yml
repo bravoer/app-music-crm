@@ -62,7 +62,7 @@ file:
     SECRET_KEY_BASE: my-secret-production-key-for-rails
     MU_APPLICATION_MAX_FILE_SIZE: 50M
 resource:
-  image: semtech/mu-cl-resources:1.10.2
+  image: semtech/mu-cl-resources:1.10.4
   links:
     - db:database
   volumes:
