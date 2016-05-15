@@ -23,9 +23,10 @@ dispatcher:
   links:
     - registration:registration
     - login:login
+    - authorization:authorization
+    - userprofile:userprofile
     - file:file
     - resource:resource
-    - userprofile:userprofile
   volumes:
     - ./config:/config
 db:
@@ -48,6 +49,10 @@ login:
     - db:database
   environment:
     MU_APPLICATION_SALT: mysupersecretsaltchangeme
+authorization:
+  image: semtech/mu-authorization-service:latest
+  links:
+    - db:database
 userprofile:
   image: bravoer/user-profile-service:0.1.0
   links:
