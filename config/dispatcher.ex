@@ -49,25 +49,25 @@ defmodule Dispatcher do
   end
 
   match "/authenticatables/*path" do
-    Proxy.forward conn, path, "http://resource/authenticatables/"
+    Proxy.forward conn, path, "http://authorization/authenticatables/"
   end
 
   match "/users/*path" do
-    Proxy.forward conn, path, "http://resource/users/"
+    Proxy.forward conn, path, "http://authorization/users/"
   end
 
   match "/user-groups/*path" do
-    Proxy.forward conn, path, "http://resource/user-groups/"
+    Proxy.forward conn, path, "http://authorization/user-groups/"
   end
 
   match "/access-tokens/*path" do
-    Proxy.forward conn, path, "http://resource/access-tokens/"
+    Proxy.forward conn, path, "http://authorization/access-tokens/"
   end
 
   match "/grants/*path" do
-    Proxy.forward conn, path, "http://resource/grants/"
+    Proxy.forward conn, path, "http://authorization/grants/"
   end
-
+	
 	match "/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end
