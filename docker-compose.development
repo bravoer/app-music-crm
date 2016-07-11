@@ -23,7 +23,7 @@ db:
   volumes:
     - ./virtuoso:/data
 registration:
-  image: semtech/mu-sinatra-template:1.3.1-ruby2.1
+  image: semtech/mu-sinatra-template:2.0.0-ruby2.3
   links:
     - db:database
   environment:
@@ -32,7 +32,7 @@ registration:
   volumes:
     - /home/erika/mu-semtech/registration-service:/app
 login:
-  image: semtech/mu-sinatra-template:1.3.1-ruby2.1
+  image: semtech/mu-sinatra-template:2.0.0-ruby2.3
   links:
     - db:database
   environment:
@@ -41,7 +41,7 @@ login:
   volumes:
     - /home/erika/mu-semtech/login-service:/app
 userprofile:
-  image: semtech/mu-sinatra-template:1.3.1-ruby2.1
+  image: semtech/mu-sinatra-template:2.0.0-ruby2.3
   links:
     - db:database
   environment:
