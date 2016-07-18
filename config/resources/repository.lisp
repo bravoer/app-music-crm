@@ -6,8 +6,8 @@
 (add-prefix "dcterms" "http://purl.org/dc/terms/")
 (add-prefix "vcard" "http://www.w3.org/2006/vcard/ns#")
 (add-prefix "locn" "http://www.w3.org/ns/locn#")
-(add-prefix "music" "http://mu.semte.ch/vocabularies/music/")
-(add-prefix "bravoer" "http://mu.semte.ch/vocabularies/bravoer/")
+(add-prefix "music" "http://mu.semte.ch/vocabularies/ext/music/")
+(add-prefix "bravoer" "http://mu.semte.ch/vocabularies/ext/bravoer/")
 
 ;; Required namespaces for authorization
 (add-prefix "auth" "http://mu.semte.ch/vocabularies/authorization/")
