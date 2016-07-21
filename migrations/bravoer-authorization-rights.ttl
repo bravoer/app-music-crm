@@ -1,0 +1,302 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/authorization/> .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1C688CA27000B000019>	rdf:type	ns1:Grant .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1C688CA27000B000019>	ns2:uuid	"5790A1C688CA27000B000019" .
+@prefix ns3:	<http://mu.semte.ch/services/authorization-service/access-tokens/> .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1C688CA27000B000019>	ns1:hasToken	ns3:show .
+@prefix ns4:	<http://mu.semte.ch/vocabularies/ext/music/> .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1C688CA27000B000019>	ns1:operatesOn	ns4:Score .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1D488CA27000B00001A>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1D488CA27000B00001A" ;
+	ns1:hasToken	ns3:show .
+@prefix ns5:	<http://www.w3.org/ns/locn#> .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1D488CA27000B00001A>	ns1:operatesOn	ns5:Address .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1F088CA27000B00001F>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1F088CA27000B00001F" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns4:Score .
+<http://mu.semte.ch/services/authorization-service/grants/5790A21D88CA27000B000028>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A21D88CA27000B000028" ;
+	ns1:hasToken	ns3:create .
+@prefix ns6:	<http://mu.semte.ch/vocabularies/ext/bravoer/> .
+<http://mu.semte.ch/services/authorization-service/grants/5790A21D88CA27000B000028>	ns1:operatesOn	ns6:Musician .
+<http://mu.semte.ch/services/authorization-service/grants/5790A22388CA27000B000029>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A22388CA27000B000029" ;
+	ns1:hasToken	ns3:create .
+@prefix vcard2006:	<http://www.w3.org/2006/vcard/ns#> .
+<http://mu.semte.ch/services/authorization-service/grants/5790A22388CA27000B000029>	ns1:operatesOn	vcard2006:Voice .
+<http://mu.semte.ch/services/authorization-service/grants/5790A22888CA27000B00002A>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A22888CA27000B00002A" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns4:Part .
+<http://mu.semte.ch/services/authorization-service/grants/57909FB888CA27000B000005>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FB888CA27000B000005" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	vcard2006:Voice .
+<http://mu.semte.ch/services/authorization-service/grants/57909FC888CA27000B000008>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FC888CA27000B000008" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns5:Address .
+<http://mu.semte.ch/services/authorization-service/grants/57909FDB88CA27000B00000C>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FDB88CA27000B00000C" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns4:Part .
+<http://mu.semte.ch/services/authorization-service/grants/57909FF288CA27000B000012>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FF288CA27000B000012" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns4:Part .
+<http://mu.semte.ch/services/authorization-service/grants/5790A00688CA27000B000017>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A00688CA27000B000017" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	vcard2006:Voice .
+<http://mu.semte.ch/services/authorization-service/grants/5790A31588CA27000B000030>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A31588CA27000B000030" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns4:Score .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+<http://mu.semte.ch/services/authorization-service/groups/572A7E58C671A50008000001>	rdf:type	foaf:Group ;
+	ns2:uuid	"572A7E58C671A50008000001" ;
+	foaf:name	"board" ;
+	ns1:hasRight	<http://mu.semte.ch/services/authorization-service/grants/57909FE988CA27000B000010> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FED88CA27000B000011> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FF688CA27000B000013> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FFA88CA27000B000014> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909F9E88CA27000B000001> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FB388CA27000B000004> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FBF88CA27000B000006> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A00188CA27000B000016> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1E188CA27000B00001D> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1F488CA27000B000020> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A20488CA27000B000024> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A21488CA27000B000026> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FD588CA27000B00000B> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FA788CA27000B000002> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FDF88CA27000B00000D> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FAC88CA27000B000003> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FE288CA27000B00000E> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1DB88CA27000B00001C> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FE688CA27000B00000F> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FC388CA27000B000007> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FCD88CA27000B000009> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A21888CA27000B000027> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FD188CA27000B00000A> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A23E88CA27000B00002F> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FFE88CA27000B000015> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A00B88CA27000B000018> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A22F88CA27000B00002C> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A23388CA27000B00002D> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A00688CA27000B000017> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FB888CA27000B000005> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FC888CA27000B000008> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FDB88CA27000B00000C> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FF288CA27000B000012> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1C688CA27000B000019> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1D488CA27000B00001A> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1F088CA27000B00001F> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A21D88CA27000B000028> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A22388CA27000B000029> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A22888CA27000B00002A> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1FC88CA27000B000022> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A20188CA27000B000023> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A21088CA27000B000025> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A22C88CA27000B00002B> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1D788CA27000B00001B> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1E688CA27000B00001E> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1F888CA27000B000021> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A23688CA27000B00002E> .
+<http://mu.semte.ch/services/authorization-service/groups/572A7E5FC671A50008000002>	rdf:type	foaf:Group ;
+	ns2:uuid	"572A7E5FC671A50008000002" ;
+	foaf:name	"musician" ;
+	ns1:hasRight	<http://mu.semte.ch/services/authorization-service/grants/57909F9E88CA27000B000001> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FBF88CA27000B000006> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A31F88CA27000B000031> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A31588CA27000B000030> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1C688CA27000B000019> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A1E688CA27000B00001E> .
+@prefix ns9:	<http://mu.semte.ch/services/authorization-service/user-groups/> .
+ns9:admin	rdf:type	foaf:Group ;
+	ns2:uuid	"9225c417-dfd4-48e3-9ab8-a27cc57e16b7" ;
+	foaf:name	"administrators group" ;
+	ns1:hasRight	<http://mu.semte.ch/services/authorization-service/grants/57909F9E88CA27000B000001> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FB388CA27000B000004> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FBF88CA27000B000006> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FE988CA27000B000010> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FED88CA27000B000011> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FF688CA27000B000013> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FFA88CA27000B000014> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A00188CA27000B000016> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FA788CA27000B000002> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FAC88CA27000B000003> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FC388CA27000B000007> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FCD88CA27000B000009> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FD188CA27000B00000A> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FD588CA27000B00000B> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FDF88CA27000B00000D> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FE288CA27000B00000E> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FE688CA27000B00000F> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FFE88CA27000B000015> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A00B88CA27000B000018> .
+@prefix ns10:	<http://mu.semte.ch/services/authorization-service/grants/> .
+ns9:admin	ns1:hasRight	ns10:basic-access-tokens ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FB888CA27000B000005> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FC888CA27000B000008> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FDB88CA27000B00000C> ,
+		<http://mu.semte.ch/services/authorization-service/grants/57909FF288CA27000B000012> ,
+		<http://mu.semte.ch/services/authorization-service/grants/5790A00688CA27000B000017> .
+ns10:basic-access-tokens	rdf:type	ns1:Grant ;
+	ns2:uuid	"1a1aa084-4052-44f6-bec6-308a9f9c4fa9" ;
+	ns1:hasToken	ns3:show ,
+		ns3:update ,
+		ns3:create ,
+		ns3:delete .
+@prefix ns11:	<http://mu.semte.ch/services/authorization-service/authenticatables/> .
+ns10:basic-access-tokens	ns1:operatesOn	ns11:basic-access-tokens .
+<http://mu.semte.ch/services/authorization-service/grants/57909F9E88CA27000B000001>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909F9E88CA27000B000001" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns4:Score .
+<http://mu.semte.ch/services/authorization-service/grants/57909FB388CA27000B000004>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FB388CA27000B000004" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns6:Musician .
+<http://mu.semte.ch/services/authorization-service/grants/57909FBF88CA27000B000006>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FBF88CA27000B000006" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns4:Part .
+<http://mu.semte.ch/services/authorization-service/grants/57909FE988CA27000B000010>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FE988CA27000B000010" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns6:Musician .
+<http://mu.semte.ch/services/authorization-service/grants/57909FED88CA27000B000011>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FED88CA27000B000011" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	vcard2006:Voice .
+<http://mu.semte.ch/services/authorization-service/grants/57909FF688CA27000B000013>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FF688CA27000B000013" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns4:Score .
+<http://mu.semte.ch/services/authorization-service/grants/57909FFA88CA27000B000014>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FFA88CA27000B000014" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns5:Address .
+<http://mu.semte.ch/services/authorization-service/grants/5790A00188CA27000B000016>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A00188CA27000B000016" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns6:Musician .
+<http://mu.semte.ch/services/authorization-service/grants/57909FA788CA27000B000002>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FA788CA27000B000002" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns5:Address .
+<http://mu.semte.ch/services/authorization-service/grants/57909FAC88CA27000B000003>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FAC88CA27000B000003" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns6:Sympathizer .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1DB88CA27000B00001C>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1DB88CA27000B00001C" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns6:Musician .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1E188CA27000B00001D>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1E188CA27000B00001D" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	vcard2006:Voice .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1F488CA27000B000020>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1F488CA27000B000020" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns5:Address .
+<http://mu.semte.ch/services/authorization-service/grants/5790A20488CA27000B000024>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A20488CA27000B000024" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns4:Part .
+<http://mu.semte.ch/services/authorization-service/grants/5790A21488CA27000B000026>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A21488CA27000B000026" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns5:Address .
+<http://mu.semte.ch/services/authorization-service/grants/5790A21888CA27000B000027>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A21888CA27000B000027" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns6:Sympathizer .
+<http://mu.semte.ch/services/authorization-service/grants/57909FC388CA27000B000007>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FC388CA27000B000007" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns4:Score .
+<http://mu.semte.ch/services/authorization-service/grants/57909FCD88CA27000B000009>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FCD88CA27000B000009" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns6:Sympathizer .
+<http://mu.semte.ch/services/authorization-service/grants/57909FD188CA27000B00000A>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FD188CA27000B00000A" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns6:Musician .
+<http://mu.semte.ch/services/authorization-service/grants/57909FD588CA27000B00000B>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FD588CA27000B00000B" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	vcard2006:Voice .
+<http://mu.semte.ch/services/authorization-service/grants/57909FDF88CA27000B00000D>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FDF88CA27000B00000D" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns4:Score .
+<http://mu.semte.ch/services/authorization-service/grants/57909FE288CA27000B00000E>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FE288CA27000B00000E" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns5:Address .
+<http://mu.semte.ch/services/authorization-service/grants/57909FE688CA27000B00000F>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FE688CA27000B00000F" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns6:Sympathizer .
+<http://mu.semte.ch/services/authorization-service/grants/57909FFE88CA27000B000015>	rdf:type	ns1:Grant ;
+	ns2:uuid	"57909FFE88CA27000B000015" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns6:Sympathizer .
+<http://mu.semte.ch/services/authorization-service/grants/5790A00B88CA27000B000018>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A00B88CA27000B000018" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns4:Part .
+<http://mu.semte.ch/services/authorization-service/grants/5790A22F88CA27000B00002C>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A22F88CA27000B00002C" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns5:Address .
+<http://mu.semte.ch/services/authorization-service/grants/5790A23388CA27000B00002D>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A23388CA27000B00002D" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns6:Sympathizer .
+<http://mu.semte.ch/services/authorization-service/grants/5790A23E88CA27000B00002F>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A23E88CA27000B00002F" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	vcard2006:Voice .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1D788CA27000B00001B>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1D788CA27000B00001B" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns6:Sympathizer .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1E688CA27000B00001E>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1E688CA27000B00001E" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns4:Part .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1F888CA27000B000021>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1F888CA27000B000021" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns6:Sympathizer .
+<http://mu.semte.ch/services/authorization-service/grants/5790A1FC88CA27000B000022>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A1FC88CA27000B000022" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	ns6:Musician .
+<http://mu.semte.ch/services/authorization-service/grants/5790A20188CA27000B000023>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A20188CA27000B000023" ;
+	ns1:hasToken	ns3:update ;
+	ns1:operatesOn	vcard2006:Voice .
+<http://mu.semte.ch/services/authorization-service/grants/5790A21088CA27000B000025>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A21088CA27000B000025" ;
+	ns1:hasToken	ns3:create ;
+	ns1:operatesOn	ns4:Score .
+<http://mu.semte.ch/services/authorization-service/grants/5790A22C88CA27000B00002B>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A22C88CA27000B00002B" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns4:Score .
+<http://mu.semte.ch/services/authorization-service/grants/5790A23688CA27000B00002E>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A23688CA27000B00002E" ;
+	ns1:hasToken	ns3:delete ;
+	ns1:operatesOn	ns6:Musician .
+<http://mu.semte.ch/services/authorization-service/grants/5790A31F88CA27000B000031>	rdf:type	ns1:Grant ;
+	ns2:uuid	"5790A31F88CA27000B000031" ;
+	ns1:hasToken	ns3:show ;
+	ns1:operatesOn	ns4:Part .
