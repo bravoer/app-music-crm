@@ -48,6 +48,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/telephones/"
   end
 
+  match "/events/*path" do
+    Proxy.forward conn, path, "http://resource/events/"
+  end
+	
   match "/authenticatables/*path" do
     Proxy.forward conn, path, "http://authorization/authenticatables/"
   end
