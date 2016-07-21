@@ -54,7 +54,7 @@ authorization:
   links:
     - db:database
 userprofile:
-  image: bravoer/user-profile-service:0.2.0
+  image: bravoer/user-profile-service:0.3.0
   links:
     - db:database
 file:
