@@ -3,8 +3,8 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix music: <http://mu.semte.ch/vocabularies/music/> .
-@prefix bravoer: <http://mu.semte.ch/vocabularies/bravoer/> .
+@prefix music: <http://mu.semte.ch/vocabularies/ext/music/> .
+@prefix bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/> .
 
 music:Score a <http://mu.semte.ch/vocabularies/authorization/Authenticatable> ;
     mu:uuid "802e4eba-1ac3-11e6-b6ba-3e1d05defe78" ;
