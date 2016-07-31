@@ -59,7 +59,16 @@
 	     (user :via ,(s-prefix "bravoer:hasUser")
 		      :as "user"))
   :has-many `((telephone :via ,(s-prefix "vcard:hasTelephone")
-                            :as "telephones"))
+			 :as "telephones")
+              (event :via ,(s-prefix "bravoer:attendee")
+		     :inverse t
+		     :as "attendances")
+	      (event :via ,(s-prefix "bravoer:legitimateAbsentee")
+		     :inverse t
+		     :as "legitimate-absences")
+	      (event :via ,(s-prefix "bravoer:illegitimateAbsentee")
+		     :inverse t
+		     :as "illegitimate-absences"))
   :authorization (list :show (s-prefix "authToken:show")
                        :update (s-prefix "authToken:update")
                        :create (s-prefix "authToken:create")
