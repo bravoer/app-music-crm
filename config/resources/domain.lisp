@@ -1,5 +1,8 @@
 (in-package :mu-cl-resources)
 
+(defparameter *supply-cache-headers-p* t
+  "when non-nil, cache headers are supplied.  this works together with mu-cache.")
+
 ;;;; define the resource
 
 (define-resource score ()

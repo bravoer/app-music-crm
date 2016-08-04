@@ -25,31 +25,31 @@ defmodule Dispatcher do
   end
 
 	match "/scores/*path" do
-    Proxy.forward conn, path, "http://resource/scores/"
+    Proxy.forward conn, path, "http://cache/scores/"
   end
 
   match "/parts/*path" do
-    Proxy.forward conn, path, "http://resource/parts/"
+    Proxy.forward conn, path, "http://cache/parts/"
   end
 
 	match "/musicians/*path" do
-    Proxy.forward conn, path, "http://resource/musicians/"
+    Proxy.forward conn, path, "http://cache/musicians/"
   end
 
   match "/sympathizers/*path" do
-    Proxy.forward conn, path, "http://resource/sympathizers/"
+    Proxy.forward conn, path, "http://cache/sympathizers/"
   end
 
   match "/addresses/*path" do
-    Proxy.forward conn, path, "http://resource/addresses/"
+    Proxy.forward conn, path, "http://cache/addresses/"
   end
 
   match "/telephones/*path" do
-    Proxy.forward conn, path, "http://resource/telephones/"
+    Proxy.forward conn, path, "http://cache/telephones/"
   end
 
   match "/events/*path" do
-    Proxy.forward conn, path, "http://resource/events/"
+    Proxy.forward conn, path, "http://cache/events/"
   end
 	
   match "/authenticatables/*path" do
