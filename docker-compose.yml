@@ -30,7 +30,7 @@ dispatcher:
   volumes:
     - ./config:/config
 db:
-  image: tenforce/virtuoso:1.0.0-virtuoso7.2.2
+  image: tenforce/virtuoso:1.1.0-virtuoso7.2.2
   environment:
     SPARQL_UPDATE: "true"
   ports:
