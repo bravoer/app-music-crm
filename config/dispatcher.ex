@@ -24,7 +24,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://userprofile/userprofile/"
   end
 
-	match "/scores/*path" do
+  match "/scores/*path" do
     Proxy.forward conn, path, "http://cache/scores/"
   end
 
