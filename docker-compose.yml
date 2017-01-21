@@ -83,3 +83,9 @@ resource:
     - db:database
   volumes:
     - ./config/resources:/config
+migrations:
+  image: semtech/mu-migrations-service:0.2.0
+  links:
+    - db:database
+  volumes:
+    - ./migrations:/data/migrations
