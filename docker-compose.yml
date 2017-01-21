@@ -72,7 +72,7 @@ file:
     MU_APPLICATION_MAX_FILE_SIZE: 50M
     STREAMING: "true"
 cache:
-  image: semtech/mu-cache:0.1.0
+  image: semtech/mu-cache:0.4.0
   links:
   - resource:resource
   environment:
