@@ -32,7 +32,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/parts/"
   end
 
-	match "/musicians/*path" do
+  match "/musicians/*path" do
     Proxy.forward conn, path, "http://cache/musicians/"
   end
 
@@ -51,7 +51,15 @@ defmodule Dispatcher do
   match "/events/*path" do
     Proxy.forward conn, path, "http://cache/events/"
   end
-	
+
+  match "/sponsorships/*path" do
+    Proxy.forward conn, path, "http://cache/sponsorships/"
+  end
+
+  match "/musician-groups/*path" do
+    Proxy.forward conn, path, "http://cache/musician-groups/"
+  end
+  
   match "/authenticatables/*path" do
     Proxy.forward conn, path, "http://authorization/authenticatables/"
   end

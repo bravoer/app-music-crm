@@ -1,0 +1,59 @@
+PREFIX auth: <http://mu.semte.ch/vocabularies/authorization/> 
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX music: <http://mu.semte.ch/vocabularies/ext/music/>
+PREFIX bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/>
+PREFIX schema: <http://schema.org/>
+PREFIX authTokens: <http://mu.semte.ch/services/authorization-service/access-tokens/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/application> {
+    bravoer:MusicianGroup a <http://mu.semte.ch/vocabularies/authorization/Authenticatable> ;
+        mu:uuid "fa31ab4b-d546-4ecb-a84c-8c06578f0460" ;
+        dct:title "MusicianGroup class" .
+
+    <http://mu.semte.ch/services/authorization-service/grants/85ce89f8-e010-11e6-bf01-fe55135034f3>	rdf:type auth:Grant ;
+	mu:uuid	"85ce89f8-e010-11e6-bf01-fe55135034f3" ;
+	auth:hasToken authTokens:show ;
+        auth:operatesOn bravoer:MusicianGroup .
+
+    <http://mu.semte.ch/services/authorization-service/grants/85ce89f8-e010-11e6-bf01-fe55135034f3>	rdf:type auth:Grant ;
+	mu:uuid	"85ce89f8-e010-11e6-bf01-fe55135034f3" ;
+	auth:hasToken authTokens:create ;
+        auth:operatesOn bravoer:MusicianGroup .
+
+    <http://mu.semte.ch/services/authorization-service/grants/85ce913c-e010-11e6-bf01-fe55135034f3>	rdf:type auth:Grant ;
+	mu:uuid	"85ce913c-e010-11e6-bf01-fe55135034f3" ;
+	auth:hasToken authTokens:update ;
+        auth:operatesOn bravoer:MusicianGroup .
+
+    <http://mu.semte.ch/services/authorization-service/grants/85ce9344-e010-11e6-bf01-fe55135034f3>	rdf:type auth:Grant ;
+	mu:uuid	"85ce9344-e010-11e6-bf01-fe55135034f3" ;
+	auth:hasToken authTokens:delete ;
+        auth:operatesOn bravoer:MusicianGroup .
+
+    <http://mu.semte.ch/services/authorization-service/groups/572A7E58C671A50008000001>	auth:hasRight <http://mu.semte.ch/services/authorization-service/grants/85ce89f8-e010-11e6-bf01-fe55135034f3> ,
+        <http://mu.semte.ch/services/authorization-service/grants/85ce89f8-e010-11e6-bf01-fe55135034f3> ,
+        <http://mu.semte.ch/services/authorization-service/grants/85ce913c-e010-11e6-bf01-fe55135034f3> ,
+        <http://mu.semte.ch/services/authorization-service/grants/85ce9344-e010-11e6-bf01-fe55135034f3> .
+
+    <http://data.bravoer.be/id/musician-groups/bravoer> a bravoer:MusicianGroup ;
+        mu:uuid "b209dbf2-e011-11e6-bf01-fe55135034f3" ;
+        vcard:hasName "bravoer" ;
+        dcterms:created "2017-01-21T20:29:00.000Z"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+    <http://data.bravoer.be/id/musician-groups/youthband> a bravoer:MusicianGroup ;
+        mu:uuid "b209de90-e011-11e6-bf01-fe55135034f3" ;
+        vcard:hasName "youthband" ;
+        dcterms:created "2017-01-21T20:29:00.000Z"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+    <http://data.bravoer.be/id/musician-groups/backup> a bravoer:MusicianGroup ;
+        mu:uuid "b209e41c-e011-11e6-bf01-fe55135034f3" ;
+        vcard:hasName "backup" ;
+        dcterms:created "2017-01-21T20:29:00.000Z"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+  }
+}

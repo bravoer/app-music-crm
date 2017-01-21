@@ -1,0 +1,42 @@
+PREFIX auth: <http://mu.semte.ch/vocabularies/authorization/> 
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX music: <http://mu.semte.ch/vocabularies/ext/music/>
+PREFIX bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/>
+PREFIX schema: <http://schema.org/>
+PREFIX authTokens: <http://mu.semte.ch/services/authorization-service/access-tokens/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/application> {
+    bravoer:Sponsorship a <http://mu.semte.ch/vocabularies/authorization/Authenticatable> ;
+        mu:uuid "6e957a2d-37b8-43b1-99f9-3b3888f718fb" ;
+        dct:title "Sponsorship class" .
+
+    <http://mu.semte.ch/services/authorization-service/grants/e42dc708-dffb-11e6-bf01-fe55135034f3>	rdf:type auth:Grant ;
+	mu:uuid	"e42dc708-dffb-11e6-bf01-fe55135034f3" ;
+	auth:hasToken authTokens:show ;
+        auth:operatesOn bravoer:Sponsorship .
+
+    <http://mu.semte.ch/services/authorization-service/grants/e42dca1e-dffb-11e6-bf01-fe55135034f3>	rdf:type auth:Grant ;
+	mu:uuid	"e42dca1e-dffb-11e6-bf01-fe55135034f3" ;
+	auth:hasToken authTokens:create ;
+        auth:operatesOn bravoer:Sponsorship .
+
+    <http://mu.semte.ch/services/authorization-service/grants/e42dcba4-dffb-11e6-bf01-fe55135034f3>	rdf:type auth:Grant ;
+	mu:uuid	"e42dcba4-dffb-11e6-bf01-fe55135034f3" ;
+	auth:hasToken authTokens:update ;
+        auth:operatesOn bravoer:Sponsorship .
+
+    <http://mu.semte.ch/services/authorization-service/grants/e42dd180-dffb-11e6-bf01-fe55135034f3>	rdf:type auth:Grant ;
+	mu:uuid	"e42dd180-dffb-11e6-bf01-fe55135034f3" ;
+	auth:hasToken authTokens:delete ;
+        auth:operatesOn bravoer:Sponsorship .
+
+    <http://mu.semte.ch/services/authorization-service/groups/572A7E58C671A50008000001>	auth:hasRight <http://mu.semte.ch/services/authorization-service/grants/e42dc708-dffb-11e6-bf01-fe55135034f3> ,
+        <http://mu.semte.ch/services/authorization-service/grants/e42dca1e-dffb-11e6-bf01-fe55135034f3> ,
+        <http://mu.semte.ch/services/authorization-service/grants/e42dcba4-dffb-11e6-bf01-fe55135034f3> ,
+        <http://mu.semte.ch/services/authorization-service/grants/e42dd180-dffb-11e6-bf01-fe55135034f3> .
+  }
+}
