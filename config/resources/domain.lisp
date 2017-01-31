@@ -105,7 +105,7 @@
 		     :as "sponsorships")
               (event :via ,(s-prefix "bravoer:helper")
 		     :inverse t
-		     :as "voluntaryActivities"))
+		     :as "voluntary-activities"))
   :authorization (list :show (s-prefix "authToken:show")
                        :update (s-prefix "authToken:update")
                        :create (s-prefix "authToken:create")
