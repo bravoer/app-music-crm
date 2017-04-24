@@ -92,6 +92,7 @@
 		(:first-name :string ,(s-prefix "vcard:hasGivenName"))
 		(:last-name :string ,(s-prefix "vcard:hasFamilyName"))
 		(:organization-name :string ,(s-prefix "vcard:hasOrganizationName"))
+                (:communication :string ,(s-prefix "bravoer:communicationsMedium"))
 		(:email :url ,(s-prefix "vcard:hasEmail"))
 		(:created :date ,(s-prefix "dcterms:created"))
 		(:modified :date ,(s-prefix "dcterms:modified")))
