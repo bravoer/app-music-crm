@@ -56,7 +56,7 @@ services:
     env_file:
       - ./environment/authentication.env
   authorization:
-    image: semtech/mu-authorization-service:latest
+    image: semtech/mu-authorization-service:0.1.0
     links:
       - db:database
   userprofile:
