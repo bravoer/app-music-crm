@@ -1,0 +1,7 @@
+WITH <http://mu.semte.ch/application>
+INSERT { 
+  <http://data.bravoer.be/id/musician-groups/bravoer> <http://www.w3.org/2006/vcard/ns#hasMember> ?s .
+}
+WHERE {
+  ?s a <http://mu.semte.ch/vocabularies/ext/bravoer/Musician>
+}

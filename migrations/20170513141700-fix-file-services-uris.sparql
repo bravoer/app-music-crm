@@ -1,0 +1,13 @@
+WITH <http://mu.semte.ch/application>
+DELETE {
+  ?s ?p ?o .
+}
+INSERT {
+  ?suri ?p ?o .
+}
+WHERE {
+  ?s ?p ?o .
+
+  FILTER(STRSTARTS(STR(?s), "/files"))
+  BIND(IRI(CONCAT("http://mu.semte.ch/services/file-service", STR(?s))) as ?suri)
+}
