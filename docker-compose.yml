@@ -45,14 +45,14 @@ registration:
   image: semtech/mu-registration-service:2.5.0
   links:
     - db:database
-  environment:
-    MU_APPLICATION_SALT: mysupersecretsaltchangeme
+  env_file:
+    - ./environment/authentication.env
 login:
   image: semtech/mu-login-service:2.7.0
   links:
     - db:database
-  environment:
-    MU_APPLICATION_SALT: mysupersecretsaltchangeme
+  env_file:
+    - ./environment/authentication.env
 authorization:
   image: semtech/mu-authorization-service:latest
   links:

@@ -1,6 +1,7 @@
 *~
 
 client/
+environment/
 storage/
 virtuoso/
 docker-compose.production
