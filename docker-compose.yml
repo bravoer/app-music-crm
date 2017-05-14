@@ -74,14 +74,13 @@ services:
       MU_APPLICATION_MAX_FILE_SIZE: 50M
       STREAMING: "true"
   cache:
-    image: semtech/mu-cache:0.4.0
+    image: semtech/mu-cache:0.5.0
     links:
     - resource:resource
     environment:
       CACHE_BACKEND: http://resource/
   resource:
-    image: semtech/mu-cl-resources:latest
-  #  image: semtech/mu-cl-resources:1.12.4
+    image: semtech/mu-cl-resources:1.15.0
     links:
       - db:database
     volumes:
