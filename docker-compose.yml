@@ -33,6 +33,7 @@ services:
       - userprofile:userprofile
       - file:file
       - cache:cache
+      - export:export
     volumes:
       - ./config:/config
   db:
@@ -91,3 +92,9 @@ services:
       - db:database
     volumes:
       - ./migrations:/data/migrations
+  export:
+    image: semtech/mu-export-js-template:0.2.0
+    volumes:
+      - ./config/export:/config
+    links:
+      - db:database

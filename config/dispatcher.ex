@@ -80,8 +80,12 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://authorization/grants/"
   end
 	
-	match "/files/*path" do
+  match "/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
+  end
+
+  match "/export/*path" do
+    Proxy.forward conn, path, "http://export/"
   end
 
   match _ do
