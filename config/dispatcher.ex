@@ -88,6 +88,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://export/"
   end
 
+  match "/label-printer/*path" do
+    Proxy.forward conn, path, "http://labels/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found" )
   end
