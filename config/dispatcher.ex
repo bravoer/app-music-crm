@@ -92,6 +92,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://labels/"
   end
 
+  match "/advanced-search/*path" do
+    Proxy.forward conn, path, "http://search/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found" )
   end

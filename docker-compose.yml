@@ -35,6 +35,7 @@ services:
       - cache:cache
       - export:export
       - labels:labels
+      - search:search
     volumes:
       - ./config:/config
   db:
@@ -103,6 +104,8 @@ services:
     image: bravoer/label-printer-service:latest
     links:
       - db:database
-    volumes:
-      - /home/erika/bravoer/label-printer-service:/app
+  search:
+    image: bravoer/advanced-search-service:latest
+    links:
+      - db:database
 
