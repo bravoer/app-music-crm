@@ -95,7 +95,7 @@ services:
     volumes:
       - ./migrations:/data/migrations
   export:
-    image: semtech/mu-export-js-template:0.2.0
+    image: semtech/mu-export-service:1.0.0
     volumes:
       - ./config/export:/config
     links:
@@ -108,4 +108,3 @@ services:
     image: bravoer/advanced-search-service:latest
     links:
       - db:database
-

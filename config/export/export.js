@@ -9,7 +9,7 @@ SELECT ?voornaam ?achternaam ?email ?telefoon ?instrument ?straat ?nummer ?postc
   ?s a <http://mu.semte.ch/vocabularies/ext/bravoer/Musician> ;
      <http://www.w3.org/2006/vcard/ns#hasGivenName> ?voornaam ;
      <http://www.w3.org/2006/vcard/ns#hasFamilyName> ?achternaam ;
-     ^<http://www.w3.org/2006/vcard/ns#hasMember> <http://data.bravoer.be/id/musician-groups/${'group'}> .
+     ^<http://www.w3.org/2006/vcard/ns#hasMember> ${['group', 'uri']} .
 
   OPTIONAL { 
     ?s <http://www.w3.org/2006/vcard/ns#hasEmail> ?emailUri .
@@ -32,7 +32,7 @@ SELECT ?voornaam ?achternaam ?email ?telefoon ?instrument ?straat ?nummer ?postc
     {
         path: '/sympathizers',
         format: 'text/csv',
-        query: template`
+        query: `
 SELECT ?organizatie ?aanspreking ?voornaam ?achternaam ?email ?telefoon ?straat ?nummer ?postcode ?gemeente ?uitnodiging WHERE { 
   ?s a <http://mu.semte.ch/vocabularies/ext/bravoer/Sympathizer> .
 
