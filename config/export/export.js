@@ -49,7 +49,7 @@ SELECT ?organizatie ?aanspreking ?voornaam ?achternaam ?email ?telefoon ?straat 
   }
 
   OPTIONAL {
-     ?s <http://www.w3.org/2006/vcard/ns#hasFamilyName> ?achterNaam .
+     ?s <http://www.w3.org/2006/vcard/ns#hasFamilyName> ?achternaam .
   }
 
   OPTIONAL { 
