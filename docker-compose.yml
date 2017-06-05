@@ -101,10 +101,10 @@ services:
     links:
       - db:database
   labels:
-    image: bravoer/label-printer-service:latest
+    image: bravoer/label-printer-service:1.0.0
     links:
       - db:database
   search:
-    image: bravoer/advanced-search-service:latest
+    image: bravoer/advanced-search-service:1.0.0
     links:
       - db:database

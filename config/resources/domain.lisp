@@ -92,7 +92,7 @@
 		(:first-name :string ,(s-prefix "vcard:hasGivenName"))
 		(:last-name :string ,(s-prefix "vcard:hasFamilyName"))
 		(:organization-name :string ,(s-prefix "vcard:hasOrganizationName"))
-                (:communication :string ,(s-prefix "bravoer:communicationsMedium"))
+                (:communication :string ,(s-prefix "bravoer:communicationsMedium")) ;; 'paper' | 'email'
 		(:email :url ,(s-prefix "vcard:hasEmail"))
 		(:created :datetime ,(s-prefix "dcterms:created"))
 		(:modified :datetime ,(s-prefix "dcterms:modified")))
