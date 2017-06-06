@@ -47,13 +47,13 @@ services:
     volumes:
       - ./virtuoso:/data
   registration:
-    image: semtech/mu-registration-service:2.5.0
+    image: semtech/mu-registration-service:2.6.0
     links:
       - db:database
     env_file:
       - ./environment/authentication.env
   login:
-    image: semtech/mu-login-service:2.7.0
+    image: semtech/mu-login-service:2.8.0
     links:
       - db:database
     env_file:
