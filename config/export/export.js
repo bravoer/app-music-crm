@@ -6,10 +6,12 @@ export default [
         format: 'text/csv',
         query: template`
 SELECT ?voornaam ?achternaam ?email ?telefoon ?instrument ?straat ?nummer ?postcode ?gemeente WHERE { 
+  ?g <http://mu.semte.ch/vocabularies/core/uuid> ${['group', 'string']} .
+
   ?s a <http://mu.semte.ch/vocabularies/ext/bravoer/Musician> ;
      <http://www.w3.org/2006/vcard/ns#hasGivenName> ?voornaam ;
      <http://www.w3.org/2006/vcard/ns#hasFamilyName> ?achternaam ;
-     ^<http://www.w3.org/2006/vcard/ns#hasMember> ${['group', 'uri']} .
+     ^<http://www.w3.org/2006/vcard/ns#hasMember> ?g .
 
   OPTIONAL { 
     ?s <http://www.w3.org/2006/vcard/ns#hasEmail> ?emailUri .
