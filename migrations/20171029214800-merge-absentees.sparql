@@ -1,0 +1,14 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/>
+
+WITH <http://mu.semte.ch/application>
+DELETE {
+  ?s bravoer:legitimateAbsentee ?o .
+  ?s bravoer:illegitimateAbsentee ?o .
+}
+INSERT {
+  ?s bravoer:absentee ?o .
+}
+WHERE {
+  ?s (bravoer:legitimateAbsentee|bravoer:illegitimateAbsentee) ?o .
+}

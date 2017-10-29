@@ -77,12 +77,9 @@
               (event :via ,(s-prefix "bravoer:attendee")
 		     :inverse t
 		     :as "attendances")
-	      (event :via ,(s-prefix "bravoer:legitimateAbsentee")
+	      (event :via ,(s-prefix "bravoer:absentee")
 		     :inverse t
-		     :as "legitimate-absences")
-	      (event :via ,(s-prefix "bravoer:illegitimateAbsentee")
-		     :inverse t
-		     :as "illegitimate-absences"))
+		     :as "absences"))
   :authorization (list :show (s-prefix "authToken:show")
                        :update (s-prefix "authToken:update")
                        :create (s-prefix "authToken:create")
@@ -150,10 +147,8 @@
   :resource-base (s-url "http://data.bravoer.be/id/events/")
   :has-many `((musician :via ,(s-prefix "bravoer:attendee")
 			:as "attendees")
-	      (musician :via ,(s-prefix "bravoer:legitimateAbsentee")
-			:as "legitimate-absentees")
-	      (musician :via ,(s-prefix "bravoer:illegitimateAbsentee")
-			:as "illegitimate-absentees")
+	      (musician :via ,(s-prefix "bravoer:absentee")
+			:as "absentees")
               (sponsorship :via ,(s-prefix "bravoer:sponsored")
 		     :inverse t
 		     :as "sponsorships")
