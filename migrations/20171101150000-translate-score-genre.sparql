@@ -1,0 +1,31 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/>
+PREFIX music: <http://mu.semte.ch/vocabularies/ext/music/>
+
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/>
+PREFIX music: <http://mu.semte.ch/vocabularies/ext/music/>
+
+WITH <http://mu.semte.ch/application>
+
+DELETE {
+  ?s music:genre "light" .
+}
+INSERT {
+  ?s music:genre "licht" .
+}
+WHERE {
+  ?s music:genre "light" .
+}
+
+
+DELETE {
+  ?s music:genre "classic" .
+}
+INSERT {
+  ?s music:genre "klassiek" .
+}
+WHERE {
+  ?s music:genre "classic" .
+}
+

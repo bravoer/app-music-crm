@@ -1,0 +1,104 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/>
+PREFIX music: <http://mu.semte.ch/vocabularies/ext/music/>
+
+WITH <http://mu.semte.ch/application>
+
+DELETE {
+  ?s music:instrument "flugelhorn" .
+}
+INSERT {
+  ?s music:instrument "flugel" .
+}
+WHERE {
+  ?s music:instrument "flugelhorn" .
+}
+
+
+DELETE {
+  ?s music:instrument "althorn" .
+}
+INSERT {
+  ?s music:instrument "alto" .
+}
+WHERE {
+  ?s music:instrument "althorn" .
+}
+
+
+DELETE {
+  ?s music:instrument "bass_eb" .
+}
+INSERT {
+  ?s music:instrument "bas Eb" .
+}
+WHERE {
+  ?s music:instrument "bass_eb" .
+}
+
+
+DELETE {
+  ?s music:instrument "bass_bb" .
+}
+INSERT {
+  ?s music:instrument "bas Bb" .
+}
+WHERE {
+  ?s music:instrument "bass_bb" .
+}
+
+
+DELETE {
+  ?s music:instrument "percussion" .
+}
+INSERT {
+  ?s music:instrument "slagwerk" .
+}
+WHERE {
+  ?s music:instrument "percussion" .
+}
+
+
+DELETE {
+  ?s music:instrument "conductor" .
+}
+INSERT {
+  ?s music:instrument "dirigent" .
+}
+WHERE {
+  ?s music:instrument "conductor" .
+}
+
+
+DELETE {
+  ?s music:instrumentPart "1st" .
+}
+INSERT {
+  ?s music:instrumentPart "1e" .
+}
+WHERE {
+  ?s music:instrumentPart "1st" .
+}
+
+
+DELETE {
+  ?s music:instrumentPart "2nd" .
+}
+INSERT {
+  ?s music:instrumentPart "2e" .
+}
+WHERE {
+  ?s music:instrumentPart "2nd" .
+}
+
+
+DELETE {
+  ?s music:instrumentPart "3th" .
+}
+INSERT {
+  ?s music:instrumentPart "3e" .
+}
+WHERE {
+  ?s music:instrumentPart "3th" .
+}
+

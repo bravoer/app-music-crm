@@ -1,0 +1,18 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/>
+PREFIX music: <http://mu.semte.ch/vocabularies/ext/music/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+
+WITH <http://mu.semte.ch/application>
+
+DELETE {
+  <http://data.bravoer.be/id/musician-groups/youthband> vcard:hasName "youthband" .
+  <http://data.bravoer.be/id/musician-groups/backup> vcard:hasName "backup" .
+}
+INSERT {
+  <http://data.bravoer.be/id/musician-groups/youthband> vcard:hasName "jeugdband" .
+  <http://data.bravoer.be/id/musician-groups/backup> vcard:hasName "reserven" .
+}
+WHERE {
+
+}
