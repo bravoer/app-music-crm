@@ -105,6 +105,6 @@ services:
     links:
       - db:database
   search:
-    image: bravoer/advanced-search-service:1.0.0
+    image: bravoer/advanced-search-service:1.1.0
     links:
       - db:database
