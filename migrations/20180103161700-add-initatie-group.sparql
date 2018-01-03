@@ -1,0 +1,17 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX bravoer: <http://mu.semte.ch/vocabularies/ext/bravoer/>
+PREFIX music: <http://mu.semte.ch/vocabularies/ext/music/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/application> {
+
+    <http://data.bravoer.be/id/musician-groups/initiation> a bravoer:MusicianGroup ;
+        mu:uuid "baa648d7-03b6-43f5-b875-1407e37b32c0" ;
+        vcard:hasName "initiatie" ;
+        dct:created "2018-01-03T16:21:00.000Z"^^<http://www.w3.org/2001/XMLSchema#date> .
+  }
+}
+
+
