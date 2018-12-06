@@ -5,13 +5,13 @@ services:
     links:
       - identifier:backend
   identifier:
-    image: semtech/mu-identifier:1.2.0
+    image: semtech/mu-identifier:1.5.0
     environment:
       MU_ENCRYPTION_SALT: mysecret
       MU_SIGNING_SALT: anothersecret
       MU_SECRET_KEY_BASE: yetanothersecretthatmustbeatleastsixtyforcharacterslongfoobarbazzzzz
   dispatcher:
-    image: semtech/mu-dispatcher:1.1.0
+    image: semtech/mu-dispatcher:1.1.2
     volumes:
       - ./config/dispatcher:/config
   database:
@@ -41,17 +41,15 @@ services:
       MU_APPLICATION_MAX_FILE_SIZE: 50M
       STREAMING: "true"
   cache:
-    image: semtech/mu-cache:0.5.0
+    image: semtech/mu-cache:0.6.0
     links:
-    - resource:resource
-    environment:
-      CACHE_BACKEND: http://resource/
+    - resource:backend
   resource:
-    image: semtech/mu-cl-resources:1.15.0
+    image: semtech/mu-cl-resources:1.17.1
     volumes:
       - ./config/resources:/config
   migrations:
-    image: semtech/mu-migrations-service:0.2.0
+    image: semtech/mu-migrations-service:0.4.0
     volumes:
       - ./config/migrations:/data/migrations
   export:
