@@ -89,7 +89,7 @@ services:
     links:
       - db:database
     volumes:
-      - ./migrations:/data/migrations
+      - ./config/migrations:/data/migrations
   export:
     image: semtech/mu-export-service:1.0.0
     volumes:
