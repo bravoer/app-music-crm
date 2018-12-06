@@ -1,3 +1,3 @@
 # MusicCRM
 
-Configuration of MusicCRM on top of [mu.semte.ch](https://mu.semte.ch)
+MusicCRM application on top of [mu.semte.ch](https://mu.semte.ch)

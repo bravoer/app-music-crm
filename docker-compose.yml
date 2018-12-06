@@ -1,71 +1,39 @@
-version: '2'
+version: '3.4'
 services:
-  # frontend:
-  #   image: bravoer/music-crm-frontend:1.1.0
-  #   links:
-  #     - identifier:backend
-  #   ports:
-  #     - "80:80"
-  #   environment:
-  #     VIRTUAL_HOST: "bravoer.semte.ch,backstage.bravoer.be"
-  #     LETSENCRYPT_HOST: "bravoer.semte.ch,backstage.bravoer.be"
-  #     LETSENCRYPT_EMAIL: "erika.pauwels@gmail.com"
+  frontend:
+    image: bravoer/music-crm-frontend:1.1.0
+    links:
+      - identifier:backend
   identifier:
     image: semtech/mu-identifier:1.2.0
-    links:
-      - dispatcher:dispatcher
-    ports:
-      - "80:80"
     environment:
       MU_ENCRYPTION_SALT: mysecret
       MU_SIGNING_SALT: anothersecret
       MU_SECRET_KEY_BASE: yetanothersecretthatmustbeatleastsixtyforcharacterslongfoobarbazzzzz
   dispatcher:
     image: semtech/mu-dispatcher:1.1.0
-    links:
-      - registration:registration
-      - login:login
-      - authorization:authorization
-      - userprofile:userprofile
-      - file:file
-      - cache:cache
-      - export:export
-      - labels:labels
-      - search:search
     volumes:
-      - ./config:/config
-  db:
+      - ./config/dispatcher:/config
+  database:
     image: tenforce/virtuoso:1.1.0-virtuoso7.2.2
     environment:
       SPARQL_UPDATE: "true"
-    ports:
-      - "8890:8890"
     volumes:
-      - ./virtuoso:/data
+      - ./database:/data
   registration:
     image: semtech/mu-registration-service:2.6.0
-    links:
-      - db:database
-    env_file:
-      - ./environment/authentication.env
+    environment:
+      MU_APPLICATION_SALT: ''
   login:
     image: semtech/mu-login-service:2.8.0
-    links:
-      - db:database
-    env_file:
-      - ./environment/authentication.env
+    environment:
+      MU_APPLICATION_SALT: ''
   authorization:
     image: semtech/mu-authorization-service:0.1.0
-    links:
-      - db:database
   userprofile:
     image: bravoer/user-profile-service:0.3.0
-    links:
-      - db:database
   file:
     image: semtech/mu-file-service:2.4.0
-    links: 
-      - db:database
     volumes:
       - ./storage:/data
     environment:
@@ -80,27 +48,18 @@ services:
       CACHE_BACKEND: http://resource/
   resource:
     image: semtech/mu-cl-resources:1.15.0
-    links:
-      - db:database
     volumes:
       - ./config/resources:/config
   migrations:
     image: semtech/mu-migrations-service:0.2.0
-    links:
-      - db:database
     volumes:
       - ./config/migrations:/data/migrations
   export:
     image: semtech/mu-export-service:1.0.0
     volumes:
       - ./config/export:/config
-    links:
-      - db:database
   labels:
     image: bravoer/label-printer-service:1.0.0
-    links:
-      - db:database
   search:
     image: bravoer/advanced-search-service:1.1.0
-    links:
-      - db:database
+
